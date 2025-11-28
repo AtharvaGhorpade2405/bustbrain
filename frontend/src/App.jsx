@@ -9,6 +9,20 @@ function App() {
     <BrowserRouter>
       <nav style={{ display: "flex", gap: "1rem", padding: "1rem" }}>
         <Link
+          to="/home"
+          style={{
+            padding: "0.5rem 1rem",
+            backgroundColor: "#2563eb",
+            color: "white",
+            borderRadius: "6px",
+            textDecoration: "none",
+            fontWeight: "500",
+          }}
+        >
+          Login
+        </Link>
+
+        <Link
           to="/dashboard"
           style={{
             padding: "0.5rem 1rem",
