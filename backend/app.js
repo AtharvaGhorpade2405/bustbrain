@@ -28,7 +28,7 @@ app.use(
 app.use(session({
   resave:true,
   saveUninitialized: false,
-  secret: 'keyboard cat',
+  secret: process.env.SESSION_SECRET,
   expire: Date.now() + 3600000 
 }));
 
