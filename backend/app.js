@@ -29,7 +29,12 @@ app.use(session({
   resave:true,
   saveUninitialized: false,
   secret: process.env.SESSION_SECRET,
-  expire: Date.now() + 3600000 
+  cookie: {
+      expire: Date.now() + 3600000,
+      httpOnly: true,
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+      secure: process.env.NODE_ENV === "production", 
+    },
 }));
 
 mongoose.connect(process.env.MONGODB_URI).then(()=>{
