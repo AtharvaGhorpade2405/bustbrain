@@ -11,6 +11,8 @@ const formController = require("./routes/forms");
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
+app.set("trust proxy", 1);
+
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
